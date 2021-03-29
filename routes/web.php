@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::get('/sorteo', function () {
     return view('sorteo');
 });
+
+/*
+    Para guardar la información
+*/
+Route::post('/agregarConcursante', 'ConcursanteController@store');

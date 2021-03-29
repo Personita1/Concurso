@@ -11,6 +11,8 @@
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <!--Scripts -->
+        
     </head>
     <body>
         <!-- Titulo y formulario para ingresar al concurso -->
@@ -27,7 +29,8 @@
                     </p>
                 </div>
                 <!-- Formulario para ingresar -->
-                <form class="px-2 py-2 mb-3">
+                <form action="{{ url('/agregarConcursante') }}" method="POST" enctype="multipart/form-data" id='formNuevoConcursante' name="nuevoConcursante" onsubmit="return validateForm()" class="px-2 py-2 mb-3">
+                    @csrf
                     <div class="row">
                         <!-- Petición de información básica sobre el concursante -->
                         <div>
@@ -35,19 +38,19 @@
                         </div>
                         <!-- Petición número de documento -->
                         <div class="col-4 mb-3">
-                            <label for="numeroDocumento" class="form-label fw-bold">Número de documento*</label>
-                            <input type="number" class="form-control" id="numeroDocumento" placeholder="1000300421">
+                            <label for="documento" class="form-label fw-bold">Número de documento*</label>
+                            <input type="number" class="form-control" name="documento" id="documento" placeholder="1000300421" required>
                         </div>
                         <!-- Petición del nombre completo -->
                         <div class="col-4 mb-3">
-                            <label for="nombreConcursante" class="form-label fw-bold">Nombre completo*</label>
-                            <input type="text" class="form-control" id="nombreConcursante" placeholder="Pepito Perez">
+                            <label for="nombre" class="form-label fw-bold">Nombre completo*</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Pepito Perez" required>
                         </div>
                     </div>
                     <!-- Seleccionador de ciudad, código obtenido de https://gist.github.com/loorlab/96c797470773fa8dd2af1d2246f95a78 -->
                     <div class="col-4 mb-3">
-                        <label for="inputCiudad" class="control-label fw-bold">Ciudad*</label>
-                            <select class="form-control" id="inputCiudad">
+                        <label for="ciudad" class="control-label fw-bold">Ciudad*</label>
+                            <select class="form-control" name="ciudad" id="ciudad" required>
                                 <option value="Arauca">Arauca</option>
                                 <option value="Armenia">Armenia</option>
                                 <option value="Barranquilla">Barranquilla</option>
@@ -89,13 +92,13 @@
                     <div class="row row-cols-lg-auto g-3 align-items-center mb-3">
                         <!-- Petición de correo electrónico -->
                         <div class="col-10">
-                            <label for="correoElectronico" class="form-label fw-bold">Correo electrónico*</label>
-                            <input type="email" class="form-control" id="correoElectronico" placeholder="nombre@ejemplo.com">
+                            <label for="correo" class="form-label fw-bold">Correo electrónico*</label>
+                            <input type="email" class="form-control" name="correo" id="correo" placeholder="nombre@ejemplo.com" required>
                         </div>
                         <!-- Petición de número de celular -->
                         <div class="col-12">
-                            <label for="exampleInputEmail1" class="form-label fw-bold"> Celular* </label>
-                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="333333333"">
+                            <label for="celular" class="form-label fw-bold"> Celular* </label>
+                            <input type="number" class="form-control" name="celular" id="celular" placeholder="333333333" required>
                         </div>
                     </div> 
                     <!-- Boton para participar -->
