@@ -4,96 +4,103 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Concurso</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <!-- Titulo y formulario para ingresar al concurso -->
+        <div class="pt-5 mb-3 col-8 mx-auto">
+            <div class="bg-light mb-3 shadow justify-content-center">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                <!-- Nombre del concurso -->
+                <div class="text-center mt-2 fs-2 fw-bold">
+                    Concurso Maravilloso
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div>
+                    <p class="px-2 fs-5 text-center">
+                        Para participar en el concurso maravilloso y ganar los maravillosos premios asegurate de rellenar todos los campos que contengan el *
+                    </p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <!-- Formulario para ingresar -->
+                <form class="px-2 py-2 mb-3">
+                    <div class="row">
+                        <!-- Petición de información básica sobre el concursante -->
+                        <div>
+                            <p class="mt-2 fw-light"> Ingresa tu número de documento, nombre y ciudad. ¡Solo puedes inscribirte una vez!</p>
+                        </div>
+                        <!-- Petición número de documento -->
+                        <div class="col-4 mb-3">
+                            <label for="numeroDocumento" class="form-label fw-bold">Número de documento*</label>
+                            <input type="number" class="form-control" id="numeroDocumento" placeholder="1000300421">
+                        </div>
+                        <!-- Petición del nombre completo -->
+                        <div class="col-4 mb-3">
+                            <label for="nombreConcursante" class="form-label fw-bold">Nombre completo*</label>
+                            <input type="text" class="form-control" id="nombreConcursante" placeholder="Pepito Perez">
+                        </div>
+                    </div>
+                    <!-- Seleccionador de ciudad, código obtenido de https://gist.github.com/loorlab/96c797470773fa8dd2af1d2246f95a78 -->
+                    <div class="col-4 mb-3">
+                        <label for="inputCiudad" class="control-label fw-bold">Ciudad*</label>
+                            <select class="form-control" id="inputCiudad">
+                                <option value="Arauca">Arauca</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Bogotá">Bogotá</option>
+                                <option value="Bucaramanga">Bucaramanga</option>
+                                <option value="Cali">Cali</option>
+                                <option value="Cartagena">Cartagena</option>
+                                <option value="Cúcuta">Cúcuta</option>
+                                <option value="Florencia">Florencia</option>
+                                <option value="Ibagué">Ibagué</option>
+                                <option value="Leticia">Leticia</option>
+                                <option value="Manizales">Manizales</option>
+                                <option value="Medellín">Medellín</option>
+                                <option value="Mitú">Mitú</option>
+                                <option value="Mocoa">Mocoa</option>
+                                <option value="Montería">Montería</option>
+                                <option value="Neiva">Neiva</option>
+                                <option value="Pasto">Pasto</option>
+                                <option value="Pereira">Pereira</option>
+                                <option value="Popayán">Popayán</option>
+                                <option value="Puerto Carreño">Puerto Carreño</option>
+                                <option value="Puerto Inírida">Puerto Inírida</option>
+                                <option value="Quibdó">Quibdó</option>
+                                <option value="Riohacha">Riohacha</option>
+                                <option value="San Andrés">San Andrés</option>
+                                <option value="San José del Guaviare">San José del Guaviare</option>
+                                <option value="Santa Marta">Santa Marta</option>
+                                <option value="Sincelejo">Sincelejo</option>
+                                <option value="Tunja">Tunja</option>
+                                <option value="Valledupar">Valledupar</option>
+                                <option value="Villavicencio">Villavicencio</option>
+                                <option value="Yopal">Yopal</option>
+                            </select>
+                    </div>
+                    <!-- Petición de correo electrónico y celular para contacto -->
+                    <div>
+                        <p class="mt-2 fw-light"> Para poder contactarte, por favor escribe tu correo electrónico y tu número de celular</p>
+                    </div>
+                    <div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+                        <!-- Petición de correo electrónico -->
+                        <div class="col-10">
+                            <label for="correoElectronico" class="form-label fw-bold">Correo electrónico*</label>
+                            <input type="email" class="form-control" id="correoElectronico" placeholder="nombre@ejemplo.com">
+                        </div>
+                        <!-- Petición de número de celular -->
+                        <div class="col-12">
+                            <label for="exampleInputEmail1" class="form-label fw-bold"> Celular* </label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="333333333"">
+                        </div>
+                    </div> 
+                    <!-- Boton para participar -->
+                    <button type="submit" class="btn btn-success d-flex justify-content-center mb-3">Participar</button>
+                </form>
             </div>
         </div>
     </body>
