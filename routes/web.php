@@ -19,8 +19,14 @@ Route::get('/', function () {
 Route::get('/sorteo', function () {
     return view('sorteo');
 });
+Route::get('/informes', function () {
+    return view('informes');
+});
 
 /*
     Para guardar la información
 */
 Route::post('/agregarConcursante', 'ConcursanteController@store');
+
+//Para elegir a los ganadores
+Route::get('/sortear','SorteoController@pick');

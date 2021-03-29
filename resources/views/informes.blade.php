@@ -11,36 +11,25 @@
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <!--Scripts -->
-        <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+        
     </head>
     <body>
-        <!-- Titulo y formulario para ingresar al concurso -->
+        <!-- Informes pedidos -->
         <div class="pt-5 mb-3 col-8 mx-auto">
             <div class="bg-light mb-3 py-2 shadow justify-content-center">
 
                 <!-- Nombre del concurso -->
                 <div class="text-center mt-2 fs-2 fw-bold">
-                    Concurso Maravilloso
+                    Informes
                 </div>
                 <!-- Elegir ganadores -->
-                <p class="text-center fw-light"> Para elegir cada ganador presiona el botón rojo un máximo de 3 veces </p>
+                <p class="text-center fw-light"> Seleccione el informe que desea obtener </p>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-danger" id="elegir" onclick="elegirGanador()"> Elegir </button>
+                          <a class="btn btn-success mx-2" href="#">Todos los concursantes</a>
+                          <a class="btn btn-success mx-2" href="#">Por ciudad</a>
+                          <a class="btn btn-success mx-2" href="#">Primeros 5</a>
+                          <a class="btn btn-success mx-2" href="#">Últimos 5</a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Listado de ganadores que se va llenando cuando se presiona el botón -->
-        <div class="pt-5 mb-3 col-8 mx-auto">
-            <div class="bg-light mb-3 py-2 shadow justify-content-center">
-
-                <!-- Ganadores del concurso -->
-                <div class="text-center mt-2 fs-2 fw-bold">
-                    Ganadores del concurso
-                </div>
-                <p class="text-center fw-light"> Estos son los ganadores del concurso, con su dirección de correo </p>
-                <p id="form"></p>
             </div>
         </div>
     </body>
