@@ -39,7 +39,7 @@
                         <!-- Petición número de documento -->
                         <div class="col-4 mb-3">
                             <label for="documento" class="form-label fw-bold">Número de documento*</label>
-                            <input type="number" class="form-control" name="documento" id="documento" placeholder="1000300421" required>
+                            <input type="number" class="form-control" name="documento" id="documento" placeholder="1000300421" maxlength="10" required>
                         </div>
                         <!-- Petición del nombre completo -->
                         <div class="col-4 mb-3">
@@ -98,7 +98,7 @@
                         <!-- Petición de número de celular -->
                         <div class="col-12">
                             <label for="celular" class="form-label fw-bold"> Celular* </label>
-                            <input type="number" class="form-control" name="celular" id="celular" placeholder="333333333" required>
+                            <input type="number" class="form-control" name="celular" id="celular" placeholder="333333333" maxlength="10" required>
                         </div>
                     </div> 
                     <!-- Boton para participar -->
