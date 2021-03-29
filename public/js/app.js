@@ -22,10 +22,6 @@ function elegirGanador(){
                 alert('No se ha podido realizar la acción');
             }
         }
-        // si hay respuesta negativa
-        error: function (error) {
-            console.log(error);
-        }
     }
     });
 }
