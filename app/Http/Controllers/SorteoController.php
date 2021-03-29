@@ -20,15 +20,8 @@ use Illuminate\Http\Request;
         $sql="SELECT nombre, correo FROM concursantes ORDER BY RAND() LIMIT 1";
         $result = mysqli_query($con,$sql);
         dd($result);
-    }
-/*
-    public function detalle(Request $request){
-        $producto = Catalogo::select()->where('id',$request['id_producto'])->first();
-        if(auth()->user()->category == 'supervisor'){
-            return view('detalles_supervisor',compact(['producto']));
-        } else{
-            return view('detalles',compact(['producto']));
-        }
-    }
-*/
+        return view('sorteo')
+            ->with('nombre', $result->nombre)
+            ->with('correo', $result->correo);
+    
 }

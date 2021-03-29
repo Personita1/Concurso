@@ -29,4 +29,4 @@ Route::get('/informes', function () {
 Route::post('/agregarConcursante', 'ConcursanteController@store');
 
 //Para elegir a los ganadores
-Route::get('/sortear','SorteoController@pick');
+Route::post('/sortear','SorteoController@pick');

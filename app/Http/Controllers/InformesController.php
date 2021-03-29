@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
         $sql="SELECT nombre, correo FROM concursantes";
         $result = mysqli_query($con,$sql);
         dd($result);
+        return('informeTodos', $result);
     }
 
     public function ciudad()
